@@ -1,0 +1,40 @@
+apply plugin: 'jacoco'
+
+jacocoTestCoverageVerification {
+    dependsOn jacocoTestReport
+
+    afterEvaluate {
+        classDirectories.from(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+            ])
+        })
+    }
+
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.10
+            }
+        }
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = false
+        csv.required = false
+        html.required = true
+//        html.outputLocation = rootProject.layout.buildDirectory.dir('jacocoHtml/$projectDir')
+    }
+
+    afterEvaluate {
+        classDirectories.from(classDirectories.files.collect {
+            fileTree(dir: it, exclude: [
+            ])
+        })
+    }
+}
+
+
+check.dependsOn jacocoTestCoverageVerification

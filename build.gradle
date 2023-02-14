@@ -8,6 +8,7 @@ version '1.0-SNAPSHOT'
 subprojects {
     apply plugin: 'java'
     apply from: "${rootProject.projectDir}/gradle/checkstyle.gradle"
+    apply from: "${rootProject.projectDir}/gradle/jacoco.gradle"
 
     repositories {
         mavenCentral()
@@ -21,8 +22,9 @@ subprojects {
         annotationProcessor 'org.projectlombok:lombok:1.18.26'
         testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
     }
+
+    test {
+        useJUnitPlatform()
+    }
 }
 
-test {
-    useJUnitPlatform()
-}
