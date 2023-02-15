@@ -1,17 +1,28 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '3.0.2' apply false
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE' apply false
 }
 
 group 'cn.dpc'
 version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
     apply from: "${rootProject.projectDir}/gradle/checkstyle.gradle"
     apply from: "${rootProject.projectDir}/gradle/jacoco.gradle"
 
     repositories {
         mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        }
     }
 
     dependencies {

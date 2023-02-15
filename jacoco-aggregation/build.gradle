@@ -4,7 +4,7 @@ plugins {
 
 dependencies {
     jacocoAggregation project(':domain')
-    jacocoAggregation project(':main')
+    jacocoAggregation project(':api')
 }
 
 reporting {
