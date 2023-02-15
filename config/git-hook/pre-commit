@@ -7,7 +7,7 @@ set -e
 ./gradlew checkstyleMain
 
 # run find bugs check
-#./gradlew spotbugsMain
+./gradlew spotbugsMain
 
 # store the last exit code in a variable
 RESULT=$?

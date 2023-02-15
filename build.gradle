@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'org.springframework.boot' version '3.0.2' apply false
     id 'io.spring.dependency-management' version '1.0.15.RELEASE' apply false
+    id "com.github.spotbugs" version "5.0.13" apply false
 }
 
 group 'cn.dpc'
@@ -15,6 +16,8 @@ subprojects {
     apply from: "${rootProject.projectDir}/gradle/checkstyle.gradle"
     apply from: "${rootProject.projectDir}/gradle/jacoco.gradle"
     apply from: "${rootProject.projectDir}/gradle/git-hooks.gradle"
+    apply from: "${rootProject.projectDir}/gradle/spotBugs.gradle"
+
 
 
     repositories {

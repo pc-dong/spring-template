@@ -1,0 +1,18 @@
+apply plugin: 'com.github.spotbugs'
+
+spotbugsMain {
+    reports {
+        html {
+            enabled = true
+            stylesheet = 'fancy-hist.xsl'
+        }
+    }
+
+    ignoreFailures = false
+    excludeFilter.set(file("$rootDir/config/spot-bugs/excludeBugsFilter.xml"))
+
+}
+
+spotbugsTest {
+    onlyIf { false }
+}
