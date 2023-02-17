@@ -6,8 +6,8 @@ dependencies {
     implementation 'org.springframework:spring-webflux'
     implementation 'com.fasterxml.jackson.core:jackson-databind'
     testImplementation 'org.mock-server:mockserver-netty:5.15.0'
-    testImplementation 'com.h2database:h2:2.1.214'
-    testImplementation 'io.r2dbc:r2dbc-h2:0.9.1.RELEASE'
+    implementation 'com.h2database:h2:2.1.214'
+    implementation 'io.r2dbc:r2dbc-h2:0.9.1.RELEASE'
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation 'io.projectreactor:reactor-test:3.4.21'
 }
