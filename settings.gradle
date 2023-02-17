@@ -2,4 +2,5 @@ rootProject.name = 'spring-template'
 include 'domain'
 include 'jacoco-aggregation'
 include 'api'
+include 'persistence'
 
