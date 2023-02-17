@@ -1,4 +1,4 @@
-package cn.dpc.persistence.config;
+package cn.dpc.persistence.db;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
